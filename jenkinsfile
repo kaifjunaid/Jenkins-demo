@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     triggers {
-        githubPush()  // 🔥 Auto-trigger pipeline on every GitHub commit
+        githubPush()   // Auto-trigger on every GitHub commit 
     }
 
     stages {
@@ -29,7 +29,6 @@ pipeline {
                     sudo mkdir -p /var/www/finecart-app
                     sudo chown -R jenkins:jenkins /var/www/finecart-app
 
-                    # Copy project files to EC2 folder
                     rsync -av --delete --exclude=.git ./ /var/www/finecart-app
 
                     echo "Deployment Completed Successfully!"
