@@ -5,7 +5,7 @@ pipeline {
         githubPush()   // Auto-trigger on every GitHub commit 
     }
   environment {
-        APP_DIR = '/var/www/Finecart-app'
+        APP_DIR = '/var/www/finecart-app'
         PORT = '3000'
     }
     stages {
