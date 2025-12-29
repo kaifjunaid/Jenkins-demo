@@ -4,7 +4,10 @@ pipeline {
     triggers {
         githubPush()   // Auto-trigger on every GitHub commit 
     }
-
+  environment {
+        APP_DIR = '/var/www/Finecart-app'
+        PORT = '3000'
+    }
     stages {
 
         stage('Clean Workspace') {
